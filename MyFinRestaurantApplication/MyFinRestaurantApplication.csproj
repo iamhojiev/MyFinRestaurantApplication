@@ -1,0 +1,1023 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48C2420B-D15C-4CAC-8D33-9E72BC0DE207}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MyFinRestaurantApplication</RootNamespace>
+    <AssemblyName>MyFinManager</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetZip, Version=1.16.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.16.0\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.CommonProtos, Version=2.16.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.CommonProtos.2.16.0\lib\net461\Google.Api.CommonProtos.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.Gax, Version=4.9.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.Gax.4.9.0\lib\net462\Google.Api.Gax.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.Gax.Grpc, Version=4.9.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.Gax.Grpc.4.9.0\lib\net462\Google.Api.Gax.Grpc.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.68.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.68.0\lib\net462\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.68.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.68.0\lib\net462\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.68.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.68.0\lib\net462\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Cloud.Firestore, Version=3.9.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Cloud.Firestore.3.9.0\lib\net462\Google.Cloud.Firestore.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Cloud.Firestore.V1, Version=3.9.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Cloud.Firestore.V1.3.9.0\lib\net462\Google.Cloud.Firestore.V1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Cloud.Location, Version=2.3.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Cloud.Location.2.3.0\lib\net462\Google.Cloud.Location.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.LongRunning, Version=3.3.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.LongRunning.3.3.0\lib\net462\Google.LongRunning.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.28.2.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.28.2\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Auth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Auth.2.66.0\lib\net462\Grpc.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.2.46.6\lib\net45\Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.Api.2.66.0\lib\net462\Grpc.Core.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Net.Client, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Net.Client.2.66.0\lib\net462\Grpc.Net.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Net.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Net.Common.2.66.0\lib\netstandard2.0\Grpc.Net.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.Charts.WinForms.1.0.9\lib\net472\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Desktop\for kor\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp, Version=110.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.110.2.0\lib\net471\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.CodeDom, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.7.0.0\lib\net462\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.6.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Async, Version=6.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Async.6.0.1\lib\netstandard2.0\System.Linq.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Net.Http.WinHttpHandler, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.WinHttpHandler.8.0.0\lib\net462\System.Net.Http.WinHttpHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.2\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="ZstdSharp, Version=0.8.0.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.8.0\lib\net462\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataBase\FirestoreService.cs" />
+    <Compile Include="DataBase\ImageServerIO.cs" />
+    <Compile Include="Forms\Finance\AddSpendCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\AddSpendCategory.Designer.cs">
+      <DependentUpon>AddSpendCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\AddIncomeCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\AddIncomeCategory.Designer.cs">
+      <DependentUpon>AddIncomeCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\CassaSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\CassaSelect.Designer.cs">
+      <DependentUpon>CassaSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageCassaInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageCassaInfo.Designer.cs">
+      <DependentUpon>PageCassaInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageCardsInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageCardsInfo.Designer.cs">
+      <DependentUpon>PageCardsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageSpendsInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageSpendsInfo.Designer.cs">
+      <DependentUpon>PageSpendsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageIncomingsInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageIncomingsInfo.Designer.cs">
+      <DependentUpon>PageIncomingsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageBalanceInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageBalanceInfo.Designer.cs">
+      <DependentUpon>PageBalanceInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageStocksInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageStocksInfo.Designer.cs">
+      <DependentUpon>PageStocksInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageMyDebtsInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageMyDebtsInfo.Designer.cs">
+      <DependentUpon>PageMyDebtsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageDebtsInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\Dashboard\PageDebtsInfo.Designer.cs">
+      <DependentUpon>PageDebtsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\PageEarningsInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\PageEarningsInfo.Designer.cs">
+      <DependentUpon>PageEarningsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\PagePayInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\PagePayInfo.Designer.cs">
+      <DependentUpon>PagePayInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\PageEntryInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\PageEntryInfo.Designer.cs">
+      <DependentUpon>PageEntryInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\UserEarnings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\UserEarnings.Designer.cs">
+      <DependentUpon>UserEarnings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\UserPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\UserPayment.Designer.cs">
+      <DependentUpon>UserPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\PayEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\PayEntry.Designer.cs">
+      <DependentUpon>PayEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\AddEditVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\AddEditVendor.Designer.cs">
+      <DependentUpon>AddEditVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\UserSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\UserSelect.Designer.cs">
+      <DependentUpon>UserSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\DebtSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\DebtSelect.Designer.cs">
+      <DependentUpon>DebtSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\SpendTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\SpendTransactions.Designer.cs">
+      <DependentUpon>SpendTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\IncomeTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\IncomeTransactions.Designer.cs">
+      <DependentUpon>IncomeTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\CardSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\CardSelect.Designer.cs">
+      <DependentUpon>CardSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alert.Designer.cs">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ColumnsSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ColumnsSettingsForm.Designer.cs">
+      <DependentUpon>ColumnsSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateForm.Designer.cs">
+      <DependentUpon>UpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSyncToFirestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSyncToFirestore.Designer.cs">
+      <DependentUpon>FormSyncToFirestore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDumper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDumper.Designer.cs">
+      <DependentUpon>FrmDumper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\AddCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\AddCard.Designer.cs">
+      <DependentUpon>AddCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Hall\AddDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hall\AddDelivery.Designer.cs">
+      <DependentUpon>AddDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Hall\AddCassa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hall\AddCassa.Designer.cs">
+      <DependentUpon>AddCassa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Hall\AddKitchen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hall\AddKitchen.Designer.cs">
+      <DependentUpon>AddKitchen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Hall\PageCassaLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hall\PageCassaLog.Designer.cs">
+      <DependentUpon>PageCassaLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PageAddStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PageAddStock.Designer.cs">
+      <DependentUpon>PageAddStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\AddEditEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\AddEditEntry.Designer.cs">
+      <DependentUpon>AddEditEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PageOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PageOrderDetails.Designer.cs">
+      <DependentUpon>PageOrderDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Product\AddProductCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Product\AddProductCategory.Designer.cs">
+      <DependentUpon>AddProductCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stock\AddStockCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stock\AddStockCategory.Designer.cs">
+      <DependentUpon>AddStockCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Hall\AddHall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hall\AddHall.Designer.cs">
+      <DependentUpon>AddHall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Hall\PageTableInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hall\PageTableInfo.Designer.cs">
+      <DependentUpon>PageTableInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Personal\AddEditPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Personal\AddEditPersonal.Designer.cs">
+      <DependentUpon>AddEditPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Hall\ChangeTableStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hall\ChangeTableStatus.Designer.cs">
+      <DependentUpon>ChangeTableStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Hall\AddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hall\AddTable.Designer.cs">
+      <DependentUpon>AddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Product\SeeRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Product\SeeRecipe.Designer.cs">
+      <DependentUpon>SeeRecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Product\AddRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Product\AddRecipe.Designer.cs">
+      <DependentUpon>AddRecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Product\AddEditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Product\AddEditProduct.Designer.cs">
+      <DependentUpon>AddEditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stock\AddEditStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stock\AddEditStock.Designer.cs">
+      <DependentUpon>AddEditStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\DataSQL.cs" />
+    <Compile Include="Forms\Stock\PageStockEntrySpend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stock\PageStockEntrySpend.Designer.cs">
+      <DependentUpon>PageStockEntrySpend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ChartCreator.cs" />
+    <Compile Include="Helper\NetworkHelper.cs" />
+    <Compile Include="Helper\Dialog.cs" />
+    <Compile Include="Helper\EnumAlertType.cs" />
+    <Compile Include="Helper\EnumLicenseType.cs" />
+    <Compile Include="Helper\EnumCasheType.cs" />
+    <Compile Include="Helper\EnumBudget.cs" />
+    <Compile Include="Helper\EnumDetailsStatus.cs" />
+    <Compile Include="Helper\EnumMoneyType.cs" />
+    <Compile Include="Helper\EnumRateType.cs" />
+    <Compile Include="Helper\EnumStockType.cs" />
+    <Compile Include="Helper\EnumHallType.cs" />
+    <Compile Include="Helper\EnumSalaryLogType.cs" />
+    <Compile Include="Helper\EnumCassaOperationType.cs" />
+    <Compile Include="Helper\EnumOrderType.cs" />
+    <Compile Include="Helper\EnumOrderStatus.cs" />
+    <Compile Include="Helper\EnumPaymentType.cs" />
+    <Compile Include="Helper\EnumSalaryType.cs" />
+    <Compile Include="Helper\EnumShift.cs" />
+    <Compile Include="Helper\EnumTablesStatus.cs" />
+    <Compile Include="Helper\EnumUserRole.cs" />
+    <Compile Include="Helper\FileArchiver.cs" />
+    <Compile Include="Helper\LicenseUtility.cs" />
+    <Compile Include="Helper\UserListSorter.cs" />
+    <Compile Include="Helper\SalaryManager.cs" />
+    <Compile Include="Helper\StockEventArgs.cs" />
+    <Compile Include="Helper\TransliterationHelper.cs" />
+    <Compile Include="Helper\Hash.cs" />
+    <Compile Include="Helper\MyDate.cs" />
+    <Compile Include="Helper\SettingsJson.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Balance.cs" />
+    <Compile Include="Model\Firebase\FireAccount.cs" />
+    <Compile Include="Model\Firebase\FireCard.cs" />
+    <Compile Include="Model\Firebase\FireLicense.cs" />
+    <Compile Include="Model\LicenseKey.cs" />
+    <Compile Include="Model\CassaSettings.cs" />
+    <Compile Include="Model\Delivery.cs" />
+    <Compile Include="Model\DetailsProductComplex.cs" />
+    <Compile Include="Model\Firebase\FireOrder.cs" />
+    <Compile Include="Model\Firebase\FireStock.cs" />
+    <Compile Include="Model\RateType.cs" />
+    <Compile Include="Model\Entry.cs" />
+    <Compile Include="Model\License.cs" />
+    <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\Recipe.cs" />
+    <Compile Include="Model\HallType.cs" />
+    <Compile Include="Model\SalaryType.cs" />
+    <Compile Include="Model\StockSpendMetrics.cs" />
+    <Compile Include="Model\Transactions\BalanceSystem.cs" />
+    <Compile Include="Model\Transactions\OrderTransaction.cs" />
+    <Compile Include="Model\Transactions\SalaryLog.cs" />
+    <Compile Include="Model\Transactions\EntryLog.cs" />
+    <Compile Include="Model\Transactions\CassaLog.cs" />
+    <Compile Include="Model\Transactions\TransactionLog.cs" />
+    <Compile Include="Model\Vendor.cs" />
+    <Compile Include="Model\Card.cs" />
+    <Compile Include="Model\Cassa.cs" />
+    <Compile Include="Model\SpendCategory.cs" />
+    <Compile Include="Model\IncomeCategory.cs" />
+    <Compile Include="Model\Payment.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Currency.cs" />
+    <Compile Include="Model\Debug.cs" />
+    <Compile Include="Model\Hall.cs" />
+    <Compile Include="Helper\MyHard.cs" />
+    <Compile Include="Model\Kitchen.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\OrderDetails.cs" />
+    <Compile Include="Model\Posting.cs" />
+    <Compile Include="Model\PostingType.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\EntryDetails.cs" />
+    <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\Shift.cs" />
+    <Compile Include="Model\Stock.cs" />
+    <Compile Include="Model\StockCategory.cs" />
+    <Compile Include="Model\Tables.cs" />
+    <Compile Include="Model\TableStatus.cs" />
+    <Compile Include="Model\Type.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Forms\Stock\PagePosting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stock\PagePosting.Designer.cs">
+      <DependentUpon>PagePosting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserMetrics.cs" />
+    <Compile Include="PageAuthorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageAuthorization.Designer.cs">
+      <DependentUpon>PageAuthorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\MyButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MyButton.Designer.cs">
+      <DependentUpon>MyButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Diagrams.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Diagrams.Designer.cs">
+      <DependentUpon>UC_Diagrams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Accounting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Accounting.Designer.cs">
+      <DependentUpon>UC_Accounting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Finance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Finance.Designer.cs">
+      <DependentUpon>UC_Finance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Directory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Directory.Designer.cs">
+      <DependentUpon>UC_Directory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_HallAndTables.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_HallAndTables.Designer.cs">
+      <DependentUpon>UC_HallAndTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Product.Designer.cs">
+      <DependentUpon>UC_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Settings.Designer.cs">
+      <DependentUpon>UC_Settings.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Finance\AddSpendCategory.resx">
+      <DependentUpon>AddSpendCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\AddIncomeCategory.resx">
+      <DependentUpon>AddIncomeCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\CassaSelect.resx">
+      <DependentUpon>CassaSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\Dashboard\PageCassaInfo.resx">
+      <DependentUpon>PageCassaInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\Dashboard\PageCardsInfo.resx">
+      <DependentUpon>PageCardsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\Dashboard\PageSpendsInfo.resx">
+      <DependentUpon>PageSpendsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\Dashboard\PageIncomingsInfo.resx">
+      <DependentUpon>PageIncomingsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\Dashboard\PageBalanceInfo.resx">
+      <DependentUpon>PageBalanceInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\Dashboard\PageStocksInfo.resx">
+      <DependentUpon>PageStocksInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\Dashboard\PageMyDebtsInfo.resx">
+      <DependentUpon>PageMyDebtsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\Dashboard\PageDebtsInfo.resx">
+      <DependentUpon>PageDebtsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\PageEarningsInfo.resx">
+      <DependentUpon>PageEarningsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\PagePayInfo.resx">
+      <DependentUpon>PagePayInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\PageEntryInfo.resx">
+      <DependentUpon>PageEntryInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\UserEarnings.resx">
+      <DependentUpon>UserEarnings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\UserPayment.resx">
+      <DependentUpon>UserPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\PayEntry.resx">
+      <DependentUpon>PayEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\AddEditVendor.resx">
+      <DependentUpon>AddEditVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\UserSelect.resx">
+      <DependentUpon>UserSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\DebtSelect.resx">
+      <DependentUpon>DebtSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\SpendTransactions.resx">
+      <DependentUpon>SpendTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\IncomeTransactions.resx">
+      <DependentUpon>IncomeTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\CardSelect.resx">
+      <DependentUpon>CardSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alert.resx">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ColumnsSettingsForm.resx">
+      <DependentUpon>ColumnsSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateForm.resx">
+      <DependentUpon>UpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSyncToFirestore.resx">
+      <DependentUpon>FormSyncToFirestore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDumper.resx">
+      <DependentUpon>FrmDumper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\AddCard.resx">
+      <DependentUpon>AddCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hall\AddDelivery.resx">
+      <DependentUpon>AddDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hall\AddCassa.resx">
+      <DependentUpon>AddCassa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hall\AddKitchen.resx">
+      <DependentUpon>AddKitchen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hall\PageCassaLog.resx">
+      <DependentUpon>PageCassaLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PageAddStock.resx">
+      <DependentUpon>PageAddStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\AddEditEntry.resx">
+      <DependentUpon>AddEditEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PageOrderDetails.resx">
+      <DependentUpon>PageOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Product\AddProductCategory.resx">
+      <DependentUpon>AddProductCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stock\AddStockCategory.resx">
+      <DependentUpon>AddStockCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hall\AddHall.resx">
+      <DependentUpon>AddHall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hall\PageTableInfo.resx">
+      <DependentUpon>PageTableInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Personal\AddEditPersonal.resx">
+      <DependentUpon>AddEditPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hall\ChangeTableStatus.resx">
+      <DependentUpon>ChangeTableStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hall\AddTable.resx">
+      <DependentUpon>AddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Product\SeeRecipe.resx">
+      <DependentUpon>SeeRecipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Product\AddRecipe.resx">
+      <DependentUpon>AddRecipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Product\AddEditProduct.resx">
+      <DependentUpon>AddEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stock\AddEditStock.resx">
+      <DependentUpon>AddEditStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stock\PageStockEntrySpend.resx">
+      <DependentUpon>PageStockEntrySpend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stock\PagePosting.resx">
+      <DependentUpon>PagePosting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageAuthorization.resx">
+      <DependentUpon>PageAuthorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\MyButton.resx">
+      <DependentUpon>MyButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Diagrams.resx">
+      <DependentUpon>UC_Diagrams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Accounting.resx">
+      <DependentUpon>UC_Accounting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Finance.resx">
+      <DependentUpon>UC_Finance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Directory.resx">
+      <DependentUpon>UC_Directory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_HallAndTables.resx">
+      <DependentUpon>UC_HallAndTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Product.resx">
+      <DependentUpon>UC_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Settings.resx">
+      <DependentUpon>UC_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.Card.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.Cassa.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.CassaLog.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.Client.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.Debt.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.Delivery.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.Entry.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.EntryDetails.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.EntryLog.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.IncomeCategory.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.MoneyLog.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.OrderDetails.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.Posting.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.Product.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.Recipe.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.SalaryLog.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.SpendCategory.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.Stock.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.StockSpendMetrics.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.TransactionLog.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.Transactions.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.User.datasource" />
+    <None Include="Properties\DataSources\ManagerApplication.Model.UserMetrics.datasource" />
+    <None Include="Properties\DataSources\MyFinRestaurantApplication.Model.Delivery.datasource" />
+    <None Include="Properties\DataSources\MyFinRestaurantApplication.Model.Hall.datasource" />
+    <None Include="Properties\DataSources\MyFinRestaurantApplication.Model.Shift.datasource" />
+    <None Include="Properties\DataSources\RestrauntApplication.Model.Category.datasource" />
+    <None Include="Properties\DataSources\RestrauntApplication.Model.Hall.datasource" />
+    <None Include="Properties\DataSources\RestrauntApplication.Model.Kitchen.datasource" />
+    <None Include="Properties\DataSources\RestrauntApplication.Model.MoneyLog.datasource" />
+    <None Include="Properties\DataSources\RestrauntApplication.Model.Order.datasource" />
+    <None Include="Properties\DataSources\RestrauntApplication.Model.Product.datasource" />
+    <None Include="Properties\DataSources\RestrauntApplication.Model.Shift.datasource" />
+    <None Include="Properties\DataSources\RestrauntApplication.Model.Stock.datasource" />
+    <None Include="Properties\DataSources\RestrauntApplication.Model.StockCategory.datasource" />
+    <None Include="Properties\DataSources\RestrauntApplication.Model.Tables.datasource" />
+    <None Include="Properties\DataSources\RestrauntApplication.Model.User.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="protos\google\api\annotations.proto" />
+    <None Include="protos\google\api\auth.proto" />
+    <None Include="protos\google\api\backend.proto" />
+    <None Include="protos\google\api\billing.proto" />
+    <None Include="protos\google\api\client.proto" />
+    <None Include="protos\google\api\config_change.proto" />
+    <None Include="protos\google\api\consumer.proto" />
+    <None Include="protos\google\api\context.proto" />
+    <None Include="protos\google\api\control.proto" />
+    <None Include="protos\google\api\distribution.proto" />
+    <None Include="protos\google\api\documentation.proto" />
+    <None Include="protos\google\api\endpoint.proto" />
+    <None Include="protos\google\api\error_reason.proto" />
+    <None Include="protos\google\api\field_behavior.proto" />
+    <None Include="protos\google\api\field_info.proto" />
+    <None Include="protos\google\api\http.proto" />
+    <None Include="protos\google\api\httpbody.proto" />
+    <None Include="protos\google\api\label.proto" />
+    <None Include="protos\google\api\launch_stage.proto" />
+    <None Include="protos\google\api\log.proto" />
+    <None Include="protos\google\api\logging.proto" />
+    <None Include="protos\google\api\metric.proto" />
+    <None Include="protos\google\api\monitored_resource.proto" />
+    <None Include="protos\google\api\monitoring.proto" />
+    <None Include="protos\google\api\policy.proto" />
+    <None Include="protos\google\api\quota.proto" />
+    <None Include="protos\google\api\resource.proto" />
+    <None Include="protos\google\api\routing.proto" />
+    <None Include="protos\google\api\service.proto" />
+    <None Include="protos\google\api\source_info.proto" />
+    <None Include="protos\google\api\system_parameter.proto" />
+    <None Include="protos\google\api\usage.proto" />
+    <None Include="protos\google\api\visibility.proto" />
+    <None Include="protos\google\rpc\code.proto" />
+    <None Include="protos\google\rpc\context\attribute_context.proto" />
+    <None Include="protos\google\rpc\context\audit_context.proto" />
+    <None Include="protos\google\rpc\error_details.proto" />
+    <None Include="protos\google\rpc\http.proto" />
+    <None Include="protos\google\rpc\status.proto" />
+    <None Include="protos\google\type\calendar_period.proto" />
+    <None Include="protos\google\type\color.proto" />
+    <None Include="protos\google\type\date.proto" />
+    <None Include="protos\google\type\datetime.proto" />
+    <None Include="protos\google\type\dayofweek.proto" />
+    <None Include="protos\google\type\decimal.proto" />
+    <None Include="protos\google\type\expr.proto" />
+    <None Include="protos\google\type\fraction.proto" />
+    <None Include="protos\google\type\interval.proto" />
+    <None Include="protos\google\type\latlng.proto" />
+    <None Include="protos\google\type\localized_text.proto" />
+    <None Include="protos\google\type\money.proto" />
+    <None Include="protos\google\type\month.proto" />
+    <None Include="protos\google\type\phone_number.proto" />
+    <None Include="protos\google\type\postal_address.proto" />
+    <None Include="protos\google\type\quaternion.proto" />
+    <None Include="protos\google\type\timeofday.proto" />
+    <None Include="Resources\Admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\InfoFill.png" />
+    <None Include="Resources\SuccessFill.png" />
+    <None Include="Resources\Success.png" />
+    <None Include="Resources\Info.png" />
+    <None Include="Resources\Warning.png" />
+    <None Include="Resources\WarningFill.png" />
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="..\packages\Google.Api.CommonProtos.2.16.0\build\Google.Api.CommonProtos.targets" Condition="Exists('..\packages\Google.Api.CommonProtos.2.16.0\build\Google.Api.CommonProtos.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Google.Api.CommonProtos.2.16.0\build\Google.Api.CommonProtos.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Google.Api.CommonProtos.2.16.0\build\Google.Api.CommonProtos.targets'))" />
+    <Error Condition="!Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
+  </Target>
+  <Import Project="..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" />
+  <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
+</Project>
