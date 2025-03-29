@@ -59,39 +59,17 @@
             this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pageTopWorkers = new MetroFramework.Controls.MetroTabPage();
             this.dgvTopWorkers = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.summatotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkcountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userMetricsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pageShift = new MetroFramework.Controls.MetroTabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvShiftHistory = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.shiftdateopenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shiftdatecloseDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getUserNameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shiftBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.cmbUser2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pageCassa = new MetroFramework.Controls.MetroTabPage();
             this.dgvCassaHistory = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.transactioncassaoperationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transactionwithdrawaltypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transactionbalanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cassaLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.transactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pageTopProds = new MetroFramework.Controls.MetroTabPage();
             this.dgvTopProduct = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.prodnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodKitchenNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodCategoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodBuyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel8 = new System.Windows.Forms.Panel();
             this.cmbProdCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbProdKitchen = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -99,21 +77,13 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.dgvIncoming = new Guna.UI2.WinForms.Guna2DataGridView();
             this.OrderNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getHallNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getTableNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_close_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getUserNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderpricewaiterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_price_hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Profit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderStatusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel6 = new System.Windows.Forms.Panel();
             this.cmbTable = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbHall = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -135,29 +105,59 @@
             this.btnConfigureColumns = new Guna.UI2.WinForms.Guna2ImageButton();
             this.txtInfo = new System.Windows.Forms.Label();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.getHallNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getTableNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getUserNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderpricewaiterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderStatusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prodnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodKitchenNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodCategoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodBuyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.transactioncassaoperationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cassaLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shiftBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.summatotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkcountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userMetricsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shiftdateopenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shiftdatecloseDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrdersCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrdersSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getUserNameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pageTopWorkers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopWorkers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userMetricsBindingSource)).BeginInit();
             this.pageShift.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShiftHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shiftBindingSource1)).BeginInit();
             this.panel3.SuspendLayout();
             this.pageCassa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCassaHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cassaLogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).BeginInit();
             this.pageTopProds.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.panel8.SuspendLayout();
             this.pageIncoming.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIncoming)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cassaLogBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shiftBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userMetricsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // shiftidDataGridViewTextBoxColumn
@@ -224,10 +224,10 @@
             this.pageTopWorkers.HorizontalScrollbarBarColor = true;
             this.pageTopWorkers.HorizontalScrollbarHighlightOnWheel = false;
             this.pageTopWorkers.HorizontalScrollbarSize = 10;
-            this.pageTopWorkers.Location = new System.Drawing.Point(4, 42);
+            this.pageTopWorkers.Location = new System.Drawing.Point(4, 47);
             this.pageTopWorkers.Name = "pageTopWorkers";
             this.pageTopWorkers.Padding = new System.Windows.Forms.Padding(3);
-            this.pageTopWorkers.Size = new System.Drawing.Size(1263, 674);
+            this.pageTopWorkers.Size = new System.Drawing.Size(1263, 669);
             this.pageTopWorkers.TabIndex = 6;
             this.pageTopWorkers.Text = "Toп Работники";
             this.pageTopWorkers.VerticalScrollbarBarColor = true;
@@ -282,7 +282,7 @@
             this.dgvTopWorkers.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTopWorkers.RowTemplate.Height = 40;
             this.dgvTopWorkers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTopWorkers.Size = new System.Drawing.Size(1257, 668);
+            this.dgvTopWorkers.Size = new System.Drawing.Size(1257, 663);
             this.dgvTopWorkers.TabIndex = 40;
             this.dgvTopWorkers.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGrid;
             this.dgvTopWorkers.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -307,34 +307,6 @@
             this.dgvTopWorkers.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvTopWorkers.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "user_name";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Работник";
-            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // summatotalDataGridViewTextBoxColumn
-            // 
-            this.summatotalDataGridViewTextBoxColumn.DataPropertyName = "check_count";
-            this.summatotalDataGridViewTextBoxColumn.HeaderText = "Кол-во чеков";
-            this.summatotalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.summatotalDataGridViewTextBoxColumn.Name = "summatotalDataGridViewTextBoxColumn";
-            this.summatotalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // checkcountDataGridViewTextBoxColumn
-            // 
-            this.checkcountDataGridViewTextBoxColumn.DataPropertyName = "summa_total";
-            this.checkcountDataGridViewTextBoxColumn.HeaderText = "Сумма чеков";
-            this.checkcountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.checkcountDataGridViewTextBoxColumn.Name = "checkcountDataGridViewTextBoxColumn";
-            this.checkcountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // userMetricsBindingSource
-            // 
-            this.userMetricsBindingSource.DataSource = typeof(ManagerApplication.Model.UserMetrics);
-            // 
             // pageShift
             // 
             this.pageShift.Controls.Add(this.panel5);
@@ -342,10 +314,10 @@
             this.pageShift.HorizontalScrollbarBarColor = true;
             this.pageShift.HorizontalScrollbarHighlightOnWheel = false;
             this.pageShift.HorizontalScrollbarSize = 10;
-            this.pageShift.Location = new System.Drawing.Point(4, 42);
+            this.pageShift.Location = new System.Drawing.Point(4, 47);
             this.pageShift.Name = "pageShift";
             this.pageShift.Padding = new System.Windows.Forms.Padding(3);
-            this.pageShift.Size = new System.Drawing.Size(1263, 674);
+            this.pageShift.Size = new System.Drawing.Size(1263, 669);
             this.pageShift.TabIndex = 5;
             this.pageShift.Text = "История смен";
             this.pageShift.VerticalScrollbarBarColor = true;
@@ -359,7 +331,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 53);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1257, 618);
+            this.panel5.Size = new System.Drawing.Size(1257, 613);
             this.panel5.TabIndex = 39;
             // 
             // dgvShiftHistory
@@ -387,6 +359,8 @@
             this.dgvShiftHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.shiftdateopenDataGridViewTextBoxColumn,
             this.shiftdatecloseDataGridViewTextBoxColumn1,
+            this.OrdersCount,
+            this.OrdersSum,
             this.getUserNameDataGridViewTextBoxColumn3});
             this.dgvShiftHistory.DataSource = this.shiftBindingSource1;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -410,7 +384,7 @@
             this.dgvShiftHistory.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvShiftHistory.RowTemplate.Height = 40;
             this.dgvShiftHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvShiftHistory.Size = new System.Drawing.Size(1257, 618);
+            this.dgvShiftHistory.Size = new System.Drawing.Size(1257, 613);
             this.dgvShiftHistory.TabIndex = 33;
             this.dgvShiftHistory.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGrid;
             this.dgvShiftHistory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -434,34 +408,6 @@
             this.dgvShiftHistory.ThemeStyle.RowsStyle.Height = 40;
             this.dgvShiftHistory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvShiftHistory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            // 
-            // shiftdateopenDataGridViewTextBoxColumn
-            // 
-            this.shiftdateopenDataGridViewTextBoxColumn.DataPropertyName = "shift_date_open";
-            this.shiftdateopenDataGridViewTextBoxColumn.HeaderText = "Начала смены";
-            this.shiftdateopenDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.shiftdateopenDataGridViewTextBoxColumn.Name = "shiftdateopenDataGridViewTextBoxColumn";
-            this.shiftdateopenDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // shiftdatecloseDataGridViewTextBoxColumn1
-            // 
-            this.shiftdatecloseDataGridViewTextBoxColumn1.DataPropertyName = "shift_date_close";
-            this.shiftdatecloseDataGridViewTextBoxColumn1.HeaderText = "Окончания смены";
-            this.shiftdatecloseDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.shiftdatecloseDataGridViewTextBoxColumn1.Name = "shiftdatecloseDataGridViewTextBoxColumn1";
-            this.shiftdatecloseDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // getUserNameDataGridViewTextBoxColumn3
-            // 
-            this.getUserNameDataGridViewTextBoxColumn3.DataPropertyName = "GetUserName";
-            this.getUserNameDataGridViewTextBoxColumn3.HeaderText = "Работал";
-            this.getUserNameDataGridViewTextBoxColumn3.MinimumWidth = 8;
-            this.getUserNameDataGridViewTextBoxColumn3.Name = "getUserNameDataGridViewTextBoxColumn3";
-            this.getUserNameDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // shiftBindingSource1
-            // 
-            this.shiftBindingSource1.DataSource = typeof(ManagerApplication.Model.Shift);
             // 
             // panel3
             // 
@@ -500,10 +446,10 @@
             this.pageCassa.HorizontalScrollbarBarColor = true;
             this.pageCassa.HorizontalScrollbarHighlightOnWheel = false;
             this.pageCassa.HorizontalScrollbarSize = 10;
-            this.pageCassa.Location = new System.Drawing.Point(4, 42);
+            this.pageCassa.Location = new System.Drawing.Point(4, 47);
             this.pageCassa.Name = "pageCassa";
             this.pageCassa.Padding = new System.Windows.Forms.Padding(3);
-            this.pageCassa.Size = new System.Drawing.Size(1263, 674);
+            this.pageCassa.Size = new System.Drawing.Size(1263, 669);
             this.pageCassa.Style = MetroFramework.MetroColorStyle.Silver;
             this.pageCassa.TabIndex = 3;
             this.pageCassa.Text = "История кассы";
@@ -537,8 +483,6 @@
             this.transactioncassaoperationDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn1,
             this.Column3,
-            this.transactionwithdrawaltypeDataGridViewTextBoxColumn,
-            this.transactionbalanceDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn2,
             this.getDescriptionDataGridViewTextBoxColumn,
             this.userDataGridViewTextBoxColumn1});
@@ -564,7 +508,7 @@
             this.dgvCassaHistory.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvCassaHistory.RowTemplate.Height = 40;
             this.dgvCassaHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCassaHistory.Size = new System.Drawing.Size(1257, 668);
+            this.dgvCassaHistory.Size = new System.Drawing.Size(1257, 663);
             this.dgvCassaHistory.TabIndex = 33;
             this.dgvCassaHistory.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGrid;
             this.dgvCassaHistory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -589,22 +533,6 @@
             this.dgvCassaHistory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvCassaHistory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // transactioncassaoperationDataGridViewTextBoxColumn
-            // 
-            this.transactioncassaoperationDataGridViewTextBoxColumn.DataPropertyName = "TransactionCassaOperationString";
-            this.transactioncassaoperationDataGridViewTextBoxColumn.HeaderText = "Операция";
-            this.transactioncassaoperationDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.transactioncassaoperationDataGridViewTextBoxColumn.Name = "transactioncassaoperationDataGridViewTextBoxColumn";
-            this.transactioncassaoperationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "transaction_amount";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Сумма";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
             // Column3
             // 
             this.Column3.DataPropertyName = "GetSourceString";
@@ -612,50 +540,6 @@
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            // 
-            // transactionwithdrawaltypeDataGridViewTextBoxColumn
-            // 
-            this.transactionwithdrawaltypeDataGridViewTextBoxColumn.DataPropertyName = "TransactionWithdrawalTypeString";
-            this.transactionwithdrawaltypeDataGridViewTextBoxColumn.HeaderText = "Способ";
-            this.transactionwithdrawaltypeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.transactionwithdrawaltypeDataGridViewTextBoxColumn.Name = "transactionwithdrawaltypeDataGridViewTextBoxColumn";
-            this.transactionwithdrawaltypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // transactionbalanceDataGridViewTextBoxColumn
-            // 
-            this.transactionbalanceDataGridViewTextBoxColumn.DataPropertyName = "transaction_source_balance";
-            this.transactionbalanceDataGridViewTextBoxColumn.HeaderText = "После операции";
-            this.transactionbalanceDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.transactionbalanceDataGridViewTextBoxColumn.Name = "transactionbalanceDataGridViewTextBoxColumn";
-            this.transactionbalanceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "transaction_date";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Дата";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // getDescriptionDataGridViewTextBoxColumn
-            // 
-            this.getDescriptionDataGridViewTextBoxColumn.DataPropertyName = "GetDescription";
-            this.getDescriptionDataGridViewTextBoxColumn.HeaderText = "Примечание";
-            this.getDescriptionDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.getDescriptionDataGridViewTextBoxColumn.Name = "getDescriptionDataGridViewTextBoxColumn";
-            this.getDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // userDataGridViewTextBoxColumn1
-            // 
-            this.userDataGridViewTextBoxColumn1.DataPropertyName = "user";
-            this.userDataGridViewTextBoxColumn1.HeaderText = "Работал";
-            this.userDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.userDataGridViewTextBoxColumn1.Name = "userDataGridViewTextBoxColumn1";
-            this.userDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // cassaLogBindingSource
-            // 
-            this.cassaLogBindingSource.DataSource = typeof(ManagerApplication.Model.CassaLog);
             // 
             // pageTopProds
             // 
@@ -665,10 +549,10 @@
             this.pageTopProds.HorizontalScrollbarBarColor = true;
             this.pageTopProds.HorizontalScrollbarHighlightOnWheel = false;
             this.pageTopProds.HorizontalScrollbarSize = 10;
-            this.pageTopProds.Location = new System.Drawing.Point(4, 42);
+            this.pageTopProds.Location = new System.Drawing.Point(4, 47);
             this.pageTopProds.Name = "pageTopProds";
             this.pageTopProds.Padding = new System.Windows.Forms.Padding(3);
-            this.pageTopProds.Size = new System.Drawing.Size(1263, 674);
+            this.pageTopProds.Size = new System.Drawing.Size(1263, 669);
             this.pageTopProds.TabIndex = 4;
             this.pageTopProds.Text = "Toп блюда";
             this.pageTopProds.VerticalScrollbarBarColor = true;
@@ -725,7 +609,7 @@
             this.dgvTopProduct.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvTopProduct.RowTemplate.Height = 40;
             this.dgvTopProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTopProduct.Size = new System.Drawing.Size(1257, 618);
+            this.dgvTopProduct.Size = new System.Drawing.Size(1257, 613);
             this.dgvTopProduct.TabIndex = 42;
             this.dgvTopProduct.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGrid;
             this.dgvTopProduct.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -749,51 +633,6 @@
             this.dgvTopProduct.ThemeStyle.RowsStyle.Height = 40;
             this.dgvTopProduct.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvTopProduct.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            // 
-            // prodnameDataGridViewTextBoxColumn
-            // 
-            this.prodnameDataGridViewTextBoxColumn.DataPropertyName = "prod_name";
-            this.prodnameDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.prodnameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.prodnameDataGridViewTextBoxColumn.Name = "prodnameDataGridViewTextBoxColumn";
-            this.prodnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prodKitchenNameDataGridViewTextBoxColumn
-            // 
-            this.prodKitchenNameDataGridViewTextBoxColumn.DataPropertyName = "ProdKitchenName";
-            this.prodKitchenNameDataGridViewTextBoxColumn.HeaderText = "Кухня";
-            this.prodKitchenNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.prodKitchenNameDataGridViewTextBoxColumn.Name = "prodKitchenNameDataGridViewTextBoxColumn";
-            this.prodKitchenNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prodCategoryNameDataGridViewTextBoxColumn
-            // 
-            this.prodCategoryNameDataGridViewTextBoxColumn.DataPropertyName = "ProdCategoryName";
-            this.prodCategoryNameDataGridViewTextBoxColumn.HeaderText = "Категория";
-            this.prodCategoryNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.prodCategoryNameDataGridViewTextBoxColumn.Name = "prodCategoryNameDataGridViewTextBoxColumn";
-            this.prodCategoryNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prodTypeNameDataGridViewTextBoxColumn
-            // 
-            this.prodTypeNameDataGridViewTextBoxColumn.DataPropertyName = "ProdTypeName";
-            this.prodTypeNameDataGridViewTextBoxColumn.FillWeight = 50F;
-            this.prodTypeNameDataGridViewTextBoxColumn.HeaderText = "Тип";
-            this.prodTypeNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.prodTypeNameDataGridViewTextBoxColumn.Name = "prodTypeNameDataGridViewTextBoxColumn";
-            this.prodTypeNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prodBuyDataGridViewTextBoxColumn
-            // 
-            this.prodBuyDataGridViewTextBoxColumn.DataPropertyName = "ProdBuy";
-            this.prodBuyDataGridViewTextBoxColumn.HeaderText = "Кол-во продаж";
-            this.prodBuyDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.prodBuyDataGridViewTextBoxColumn.Name = "prodBuyDataGridViewTextBoxColumn";
-            this.prodBuyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(ManagerApplication.Model.Product);
             // 
             // panel8
             // 
@@ -976,33 +815,6 @@
             this.OrderNum.Name = "OrderNum";
             this.OrderNum.ReadOnly = true;
             // 
-            // getHallNameDataGridViewTextBoxColumn
-            // 
-            this.getHallNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.getHallNameDataGridViewTextBoxColumn.DataPropertyName = "GetHallName";
-            this.getHallNameDataGridViewTextBoxColumn.HeaderText = "Зал";
-            this.getHallNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.getHallNameDataGridViewTextBoxColumn.Name = "getHallNameDataGridViewTextBoxColumn";
-            this.getHallNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // getTableNameDataGridViewTextBoxColumn
-            // 
-            this.getTableNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.getTableNameDataGridViewTextBoxColumn.DataPropertyName = "GetTableName";
-            this.getTableNameDataGridViewTextBoxColumn.HeaderText = "Столик";
-            this.getTableNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.getTableNameDataGridViewTextBoxColumn.Name = "getTableNameDataGridViewTextBoxColumn";
-            this.getTableNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // orderdateDataGridViewTextBoxColumn
-            // 
-            this.orderdateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.orderdateDataGridViewTextBoxColumn.DataPropertyName = "order_date";
-            this.orderdateDataGridViewTextBoxColumn.HeaderText = "Открытие";
-            this.orderdateDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.orderdateDataGridViewTextBoxColumn.Name = "orderdateDataGridViewTextBoxColumn";
-            this.orderdateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // order_close_date
             // 
             this.order_close_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -1012,15 +824,6 @@
             this.order_close_date.Name = "order_close_date";
             this.order_close_date.ReadOnly = true;
             // 
-            // getUserNameDataGridViewTextBoxColumn
-            // 
-            this.getUserNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.getUserNameDataGridViewTextBoxColumn.DataPropertyName = "GetUserName";
-            this.getUserNameDataGridViewTextBoxColumn.HeaderText = "Официант";
-            this.getUserNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.getUserNameDataGridViewTextBoxColumn.Name = "getUserNameDataGridViewTextBoxColumn";
-            this.getUserNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "DetailsCost";
@@ -1028,15 +831,6 @@
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            // 
-            // orderpriceDataGridViewTextBoxColumn
-            // 
-            this.orderpriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.orderpriceDataGridViewTextBoxColumn.DataPropertyName = "DetailsPrice";
-            this.orderpriceDataGridViewTextBoxColumn.HeaderText = "Получено";
-            this.orderpriceDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.orderpriceDataGridViewTextBoxColumn.Name = "orderpriceDataGridViewTextBoxColumn";
-            this.orderpriceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // OrderPayment
             // 
@@ -1053,15 +847,6 @@
             this.order_discount.MinimumWidth = 8;
             this.order_discount.Name = "order_discount";
             this.order_discount.ReadOnly = true;
-            // 
-            // orderpricewaiterDataGridViewTextBoxColumn
-            // 
-            this.orderpricewaiterDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.orderpricewaiterDataGridViewTextBoxColumn.DataPropertyName = "order_price_waiter";
-            this.orderpricewaiterDataGridViewTextBoxColumn.HeaderText = "% официанта";
-            this.orderpricewaiterDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.orderpricewaiterDataGridViewTextBoxColumn.Name = "orderpricewaiterDataGridViewTextBoxColumn";
-            this.orderpricewaiterDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // order_price_hall
             // 
@@ -1088,19 +873,6 @@
             this.Profit.MinimumWidth = 6;
             this.Profit.Name = "Profit";
             this.Profit.ReadOnly = true;
-            // 
-            // orderStatusDataGridViewTextBoxColumn1
-            // 
-            this.orderStatusDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.orderStatusDataGridViewTextBoxColumn1.DataPropertyName = "OrderStatus";
-            this.orderStatusDataGridViewTextBoxColumn1.HeaderText = "Статус";
-            this.orderStatusDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.orderStatusDataGridViewTextBoxColumn1.Name = "orderStatusDataGridViewTextBoxColumn1";
-            this.orderStatusDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataSource = typeof(ManagerApplication.Model.Order);
             // 
             // panel6
             // 
@@ -1412,12 +1184,240 @@
             this.metroTabControl1.FontSize = MetroFramework.MetroTabControlSize.Tall;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 0);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 3;
             this.metroTabControl1.Size = new System.Drawing.Size(1271, 720);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Teal;
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
             this.metroTabControl1.SelectedIndexChanged += new System.EventHandler(this.metroTabControl1_SelectedIndexChanged);
+            // 
+            // getHallNameDataGridViewTextBoxColumn
+            // 
+            this.getHallNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.getHallNameDataGridViewTextBoxColumn.DataPropertyName = "GetHallName";
+            this.getHallNameDataGridViewTextBoxColumn.HeaderText = "Зал";
+            this.getHallNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.getHallNameDataGridViewTextBoxColumn.Name = "getHallNameDataGridViewTextBoxColumn";
+            this.getHallNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // getTableNameDataGridViewTextBoxColumn
+            // 
+            this.getTableNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.getTableNameDataGridViewTextBoxColumn.DataPropertyName = "GetTableName";
+            this.getTableNameDataGridViewTextBoxColumn.HeaderText = "Столик";
+            this.getTableNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.getTableNameDataGridViewTextBoxColumn.Name = "getTableNameDataGridViewTextBoxColumn";
+            this.getTableNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // orderdateDataGridViewTextBoxColumn
+            // 
+            this.orderdateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.orderdateDataGridViewTextBoxColumn.DataPropertyName = "order_date";
+            this.orderdateDataGridViewTextBoxColumn.HeaderText = "Открытие";
+            this.orderdateDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.orderdateDataGridViewTextBoxColumn.Name = "orderdateDataGridViewTextBoxColumn";
+            this.orderdateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // getUserNameDataGridViewTextBoxColumn
+            // 
+            this.getUserNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.getUserNameDataGridViewTextBoxColumn.DataPropertyName = "GetUserName";
+            this.getUserNameDataGridViewTextBoxColumn.HeaderText = "Официант";
+            this.getUserNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.getUserNameDataGridViewTextBoxColumn.Name = "getUserNameDataGridViewTextBoxColumn";
+            this.getUserNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // orderpriceDataGridViewTextBoxColumn
+            // 
+            this.orderpriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.orderpriceDataGridViewTextBoxColumn.DataPropertyName = "DetailsPrice";
+            this.orderpriceDataGridViewTextBoxColumn.HeaderText = "Получено";
+            this.orderpriceDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.orderpriceDataGridViewTextBoxColumn.Name = "orderpriceDataGridViewTextBoxColumn";
+            this.orderpriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // orderpricewaiterDataGridViewTextBoxColumn
+            // 
+            this.orderpricewaiterDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.orderpricewaiterDataGridViewTextBoxColumn.DataPropertyName = "order_price_waiter";
+            this.orderpricewaiterDataGridViewTextBoxColumn.HeaderText = "% официанта";
+            this.orderpricewaiterDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.orderpricewaiterDataGridViewTextBoxColumn.Name = "orderpricewaiterDataGridViewTextBoxColumn";
+            this.orderpricewaiterDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // orderStatusDataGridViewTextBoxColumn1
+            // 
+            this.orderStatusDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.orderStatusDataGridViewTextBoxColumn1.DataPropertyName = "OrderStatus";
+            this.orderStatusDataGridViewTextBoxColumn1.HeaderText = "Статус";
+            this.orderStatusDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.orderStatusDataGridViewTextBoxColumn1.Name = "orderStatusDataGridViewTextBoxColumn1";
+            this.orderStatusDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(ManagerApplication.Model.Order);
+            // 
+            // prodnameDataGridViewTextBoxColumn
+            // 
+            this.prodnameDataGridViewTextBoxColumn.DataPropertyName = "prod_name";
+            this.prodnameDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.prodnameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.prodnameDataGridViewTextBoxColumn.Name = "prodnameDataGridViewTextBoxColumn";
+            this.prodnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prodKitchenNameDataGridViewTextBoxColumn
+            // 
+            this.prodKitchenNameDataGridViewTextBoxColumn.DataPropertyName = "ProdKitchenName";
+            this.prodKitchenNameDataGridViewTextBoxColumn.HeaderText = "Кухня";
+            this.prodKitchenNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.prodKitchenNameDataGridViewTextBoxColumn.Name = "prodKitchenNameDataGridViewTextBoxColumn";
+            this.prodKitchenNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prodCategoryNameDataGridViewTextBoxColumn
+            // 
+            this.prodCategoryNameDataGridViewTextBoxColumn.DataPropertyName = "ProdCategoryName";
+            this.prodCategoryNameDataGridViewTextBoxColumn.HeaderText = "Категория";
+            this.prodCategoryNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.prodCategoryNameDataGridViewTextBoxColumn.Name = "prodCategoryNameDataGridViewTextBoxColumn";
+            this.prodCategoryNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prodTypeNameDataGridViewTextBoxColumn
+            // 
+            this.prodTypeNameDataGridViewTextBoxColumn.DataPropertyName = "ProdTypeName";
+            this.prodTypeNameDataGridViewTextBoxColumn.FillWeight = 50F;
+            this.prodTypeNameDataGridViewTextBoxColumn.HeaderText = "Тип";
+            this.prodTypeNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.prodTypeNameDataGridViewTextBoxColumn.Name = "prodTypeNameDataGridViewTextBoxColumn";
+            this.prodTypeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prodBuyDataGridViewTextBoxColumn
+            // 
+            this.prodBuyDataGridViewTextBoxColumn.DataPropertyName = "ProdBuy";
+            this.prodBuyDataGridViewTextBoxColumn.HeaderText = "Кол-во продаж";
+            this.prodBuyDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.prodBuyDataGridViewTextBoxColumn.Name = "prodBuyDataGridViewTextBoxColumn";
+            this.prodBuyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(ManagerApplication.Model.Product);
+            // 
+            // transactioncassaoperationDataGridViewTextBoxColumn
+            // 
+            this.transactioncassaoperationDataGridViewTextBoxColumn.DataPropertyName = "TransactionCassaOperationString";
+            this.transactioncassaoperationDataGridViewTextBoxColumn.HeaderText = "Операция";
+            this.transactioncassaoperationDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.transactioncassaoperationDataGridViewTextBoxColumn.Name = "transactioncassaoperationDataGridViewTextBoxColumn";
+            this.transactioncassaoperationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "transaction_amount";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Сумма";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "transaction_date";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Дата";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // getDescriptionDataGridViewTextBoxColumn
+            // 
+            this.getDescriptionDataGridViewTextBoxColumn.DataPropertyName = "GetCassaDescription";
+            this.getDescriptionDataGridViewTextBoxColumn.HeaderText = "Примечание";
+            this.getDescriptionDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.getDescriptionDataGridViewTextBoxColumn.Name = "getDescriptionDataGridViewTextBoxColumn";
+            this.getDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // userDataGridViewTextBoxColumn1
+            // 
+            this.userDataGridViewTextBoxColumn1.DataPropertyName = "user";
+            this.userDataGridViewTextBoxColumn1.HeaderText = "Работал";
+            this.userDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.userDataGridViewTextBoxColumn1.Name = "userDataGridViewTextBoxColumn1";
+            this.userDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // cassaLogBindingSource
+            // 
+            this.cassaLogBindingSource.DataSource = typeof(ManagerApplication.Model.CassaLog);
+            // 
+            // shiftBindingSource1
+            // 
+            this.shiftBindingSource1.DataSource = typeof(ManagerApplication.Model.Shift);
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "user_name";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Работник";
+            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // summatotalDataGridViewTextBoxColumn
+            // 
+            this.summatotalDataGridViewTextBoxColumn.DataPropertyName = "check_count";
+            this.summatotalDataGridViewTextBoxColumn.HeaderText = "Кол-во чеков";
+            this.summatotalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.summatotalDataGridViewTextBoxColumn.Name = "summatotalDataGridViewTextBoxColumn";
+            this.summatotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // checkcountDataGridViewTextBoxColumn
+            // 
+            this.checkcountDataGridViewTextBoxColumn.DataPropertyName = "summa_total";
+            this.checkcountDataGridViewTextBoxColumn.HeaderText = "Сумма чеков";
+            this.checkcountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.checkcountDataGridViewTextBoxColumn.Name = "checkcountDataGridViewTextBoxColumn";
+            this.checkcountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // userMetricsBindingSource
+            // 
+            this.userMetricsBindingSource.DataSource = typeof(ManagerApplication.Model.UserMetrics);
+            // 
+            // shiftdateopenDataGridViewTextBoxColumn
+            // 
+            this.shiftdateopenDataGridViewTextBoxColumn.DataPropertyName = "shift_date_open";
+            this.shiftdateopenDataGridViewTextBoxColumn.HeaderText = "Дата начала смены";
+            this.shiftdateopenDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.shiftdateopenDataGridViewTextBoxColumn.Name = "shiftdateopenDataGridViewTextBoxColumn";
+            this.shiftdateopenDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // shiftdatecloseDataGridViewTextBoxColumn1
+            // 
+            this.shiftdatecloseDataGridViewTextBoxColumn1.DataPropertyName = "shift_date_close";
+            this.shiftdatecloseDataGridViewTextBoxColumn1.HeaderText = "Дата окончания смены";
+            this.shiftdatecloseDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.shiftdatecloseDataGridViewTextBoxColumn1.Name = "shiftdatecloseDataGridViewTextBoxColumn1";
+            this.shiftdatecloseDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // OrdersCount
+            // 
+            this.OrdersCount.DataPropertyName = "OrdersCount";
+            this.OrdersCount.HeaderText = "Кол-во чеков";
+            this.OrdersCount.MinimumWidth = 6;
+            this.OrdersCount.Name = "OrdersCount";
+            this.OrdersCount.ReadOnly = true;
+            // 
+            // OrdersSum
+            // 
+            this.OrdersSum.DataPropertyName = "OrdersSum";
+            this.OrdersSum.HeaderText = "Сумма чеков";
+            this.OrdersSum.MinimumWidth = 6;
+            this.OrdersSum.Name = "OrdersSum";
+            this.OrdersSum.ReadOnly = true;
+            // 
+            // getUserNameDataGridViewTextBoxColumn3
+            // 
+            this.getUserNameDataGridViewTextBoxColumn3.DataPropertyName = "GetUserName";
+            this.getUserNameDataGridViewTextBoxColumn3.HeaderText = "Работал";
+            this.getUserNameDataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.getUserNameDataGridViewTextBoxColumn3.Name = "getUserNameDataGridViewTextBoxColumn3";
+            this.getUserNameDataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // UC_Accounting
             // 
@@ -1429,29 +1429,29 @@
             this.Size = new System.Drawing.Size(1271, 720);
             this.pageTopWorkers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopWorkers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userMetricsBindingSource)).EndInit();
             this.pageShift.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShiftHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shiftBindingSource1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.pageCassa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCassaHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cassaLogBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).EndInit();
             this.pageTopProds.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.panel8.ResumeLayout(false);
             this.pageIncoming.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIncoming)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.metroTabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cassaLogBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shiftBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userMetricsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1476,11 +1476,8 @@
         private MetroFramework.Controls.MetroTabPage pageShift;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2DataGridView dgvShiftHistory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn shiftdateopenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn shiftdatecloseDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn onCountOrderDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn onSumOrderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn getUserNameDataGridViewTextBoxColumn3;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2ComboBox cmbUser2;
         private MetroFramework.Controls.MetroTabPage pageCassa;
@@ -1542,13 +1539,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn getCassaNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn getUserNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource cassaLogBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn transactionbalanceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn transactioncassaoperationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn transactionwithdrawaltypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn transactionbalanceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn getDescriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shiftdateopenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shiftdatecloseDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrdersCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrdersSum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn getUserNameDataGridViewTextBoxColumn3;
     }
 }

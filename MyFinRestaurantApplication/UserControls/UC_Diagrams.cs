@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -222,59 +223,69 @@ namespace ManagerApplication.UserControls
             SetupProdsChart();
         }
 
-
         private async void SetWorkersData()
         {
-            if (workersData != null) workersData.Clear();
-            else workersData = new Dictionary<string, double>();
+            if (workersData == null)
+            {
+                workersData = new Dictionary<string, double>();
+            }
+            workersData.Clear();
 
-            // Получаем список всех пользователей.
-            var users = await new User().OnAllUserAsync();
-            BindingSource bs = new BindingSource();
+            bool bySumma = rbSumma.Checked;
 
-            // Переменная для хранения даты смены.
-            DateTime myDate;
+            // Параллельная загрузка данных
+            var usersTask = new User().OnAllUserAsync();
+            var ordersTask = new Order().OnLoadAsync();
+            var shiftsTask = new Shift().OnLoadAsync();
 
-            // Проверяем, какие данные нужно отобразить: сумму или количество.
-            var bySumma = rbSumma.Checked;
+            await Task.WhenAll(usersTask, ordersTask, shiftsTask);
 
-            // Перебираем всех пользователей.
+            var users = await usersTask;
+            var orders = await ordersTask;
+            var shifts = await shiftsTask;
+
+            // Группируем заказы по сменам (shift_id → список заказов)
+            var ordersByShift = orders
+                .GroupBy(o => o.order_shift)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
+            // Группируем смены по пользователям (user_id → список смен)
+            var shiftsByUser = shifts
+                .GroupBy(s => s.shift_user_id)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
             foreach (var user in users)
             {
-                // Инициализируем переменные для подсчета суммы и количества.
-                double summa = 0.0;
-                int check = 0;
+                double total = 0;
 
-                // Получаем все смены для пользователя.
-                var shifts = await new Shift().OnLoadAsync();
-                shifts = shifts.Where(s => s.shift_user_id == user.user_id).ToList();
-
-                // Перебираем все смены и суммируем данные.
-                foreach (var shift in shifts)
+                if (shiftsByUser.TryGetValue(user.user_id, out var userShifts))
                 {
-                    myDate = DateTime.Parse(shift.shift_date_open);
-                    if (myDate >= startDate && myDate < endDate.AddDays(1))
+                    foreach (var shift in userShifts)
                     {
-                        await shift.LoadOrdersAsync();
-                        summa += shift.OrdersSum;
-                        check += shift.OrdersCount;
+                        // Проверяем дату смены
+                        if (DateTime.TryParse(shift.shift_date_open, out var date)
+                            && date >= startDate
+                            && date < endDate.AddDays(1))
+                        {
+                            // Берем заказы для текущей смены
+                            if (ordersByShift.TryGetValue(shift.shift_id, out var shiftOrders))
+                            {
+                                total += bySumma
+                                    ? shiftOrders.Sum(o => o.order_price)  // Сумма заказов
+                                    : shiftOrders.Count;                     // Количество заказов
+                            }
+                        }
                     }
                 }
 
-                UserMetrics userMetric = new UserMetrics()
-                {
-                    summa_total = summa,
-                    check_count = check,
-                    user_name = user.user_name
-                };
-
-                if (bySumma)
-                    SetData(workersData, user.user_name, summa);
-                else
-                    SetData(workersData, user.user_name, check);
+                workersData[user.user_name] = total;
             }
-            bs.DataSource = workersData.ToList();
-            dgvTopWorkers.DataSource = bs;
+
+            // Обновляем DataGrid
+            dgvTopWorkers.DataSource = workersData
+                .OrderByDescending(kv => kv.Value)
+                .ToList();
+
             dgvTopWorkers.Columns[0].HeaderText = "Работник";
             dgvTopWorkers.Columns[1].HeaderText = bySumma ? "Сумма чеков" : "Количество чеков";
             SetupWorkersChart();

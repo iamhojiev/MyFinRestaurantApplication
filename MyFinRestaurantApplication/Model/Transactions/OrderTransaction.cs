@@ -18,7 +18,7 @@ namespace ManagerApplication.Model
         public double transaction_card_amount { get; set; }
         public double TotalAmount => transaction_cash_amount + transaction_card_amount;
 
-        private static RestClient client = new RestClient(DataSQL.URL + @"/transactions");
+        private static RestClient client = new RestClient(DataSQL.URL + @"/order_transactions");
 
         // Загрузка всех транзакций
         public async Task<List<OrderTransaction>> OnLoadAsync()

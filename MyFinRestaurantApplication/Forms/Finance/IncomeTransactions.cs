@@ -52,9 +52,9 @@ namespace ManagerApplication
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(txtSumma.Text, out double summa))
+            if (double.TryParse(txtSumma.Text, out double amount))
             {
-                ProcessTransaction(summa);
+                ProcessTransaction(amount);
             }
             else
             {
@@ -62,19 +62,19 @@ namespace ManagerApplication
             }
         }
 
-        private async void ProcessTransaction(double summa)
+        private async void ProcessTransaction(double amount)
         {
             bool cassaTransaction = false;
             bool cardTransaction = false;
 
             if (selectedCassa != null)
             {
-                cassaTransaction = await ProcessCassaTransaction(summa);
+                cassaTransaction = await ProcessCassaTransaction(amount);
             }
 
             if (selectedCard != null)
             {
-                cardTransaction = await ProcessCardTransaction(summa);
+                cardTransaction = await ProcessCardTransaction(amount);
             }
 
             if (selectedCassa != null && !cassaTransaction ||
@@ -85,35 +85,35 @@ namespace ManagerApplication
             DialogResult = DialogResult.OK;
         }
 
-        private async Task<bool> ProcessCassaTransaction(double summa)
+        private async Task<bool> ProcessCassaTransaction(double transactionAmount)
         {
-            if (selectedCassa.cassa_money < summa)
+            if (selectedCassa.cassa_money < transactionAmount)
             {
                 Dialog.Error("Недостаточно денег на выбранной кассе");
                 return false;
             }
 
-            selectedCassa.cassa_money -= summa;
+            selectedCassa.cassa_money -= transactionAmount;
             if (await new Cassa().OnUpdateAsync(selectedCassa))
             {
-                await BalanceSystem.Instance.AddCassaOperation(EnumCassaOperationType.Снятие, EnumWithdrawalType.Наличными, summa, selectedCassa.cassa_money, selectedCassa.cassa_id, txtComment.Text.Trim());
+                await BalanceSystem.Instance.AddCassaOperation(EnumCassaOperationType.Снятие, transactionAmount, cassaId: selectedCassa.cassa_id, description: txtComment.Text.Trim());
             }
 
             return true;
         }
 
-        private async Task<bool> ProcessCardTransaction(double summa)
+        private async Task<bool> ProcessCardTransaction(double transactionAmount)
         {
-            if (selectedCard.card_balance < summa)
+            if (selectedCard.card_balance < transactionAmount)
             {
                 Dialog.Error("Недостаточно денег на выбранной карте");
                 return false;
             }
 
-            selectedCard.card_balance -= summa;
+            selectedCard.card_balance -= transactionAmount;
             if (await new Card().OnUpdateAsync(selectedCard))
             {
-                await BalanceSystem.Instance.AddCassaOperation(EnumCassaOperationType.Снятие, EnumWithdrawalType.Безналичными, summa, selectedCard.card_balance, selectedCard.card_id, txtComment.Text.Trim());
+                await BalanceSystem.Instance.AddCassaOperation(EnumCassaOperationType.Снятие, transactionAmount, cardId: selectedCard.card_id, description: txtComment.Text.Trim());
             }
 
             return true;

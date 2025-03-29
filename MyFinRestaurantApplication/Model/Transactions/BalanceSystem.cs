@@ -99,20 +99,21 @@ namespace ManagerApplication.Model
         }
 
         // Методы для работы с CassaLog
-        public async Task AddCassaOperation(EnumCassaOperationType operationType, EnumWithdrawalType withdrawalType, double amount, double balance, int cassaId, string description = "")
+        public async Task AddCassaOperation(EnumCassaOperationType operationType, double amount, int cassaId = 0, int cardId = 0, string description = "")
         {
             var cassaLog = new CassaLog
             {
                 transaction_type = operationType == EnumCassaOperationType.Пополнение ?
                     EnumTransactionType.Расход :
                     EnumTransactionType.Доход,
+                transaction_description = operationType == EnumCassaOperationType.Пополнение ?
+                    "Пополнение кассы" :
+                    "Выемка кассы",
                 transaction_cassa_operation = operationType,
-                transaction_withdrawal_type = withdrawalType,
                 transaction_amount = amount,
-                transaction_cassa_balance = balance,
-                transaction_description = description,
                 transaction_cassa_description = description,
                 transaction_cassa = cassaId,
+                transaction_card = cardId,
                 transaction_date = MyDate.DateFormat(),
                 transaction_user = Settings.Default.user_id,
             };

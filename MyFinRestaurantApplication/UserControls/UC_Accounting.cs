@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using static Google.Rpc.Context.AttributeContext.Types;
 
 
 namespace ManagerApplication.UserControls
@@ -311,29 +312,32 @@ namespace ManagerApplication.UserControls
         {
             BindingSource bs = new BindingSource();
 
-            // Загружаем данные параллельно
-            var shiftTask = new Shift().OnLoadAsync();
-            var usersTask = new User().OnAllUserAsync();
-            await Task.WhenAll(shiftTask, usersTask);
+            // Параллельная загрузка всех данных
+            var loadShiftsTask = new Shift().OnLoadAsync();
+            var loadUsersTask = new User().OnAllUserAsync();
+            var loadOrdersTask = new Order().OnLoadAsync();
 
-            var shift = shiftTask.Result;
-            var users = usersTask.Result;
+            await Task.WhenAll(loadShiftsTask, loadUsersTask, loadOrdersTask);
+
+            var shifts = await loadShiftsTask;
+            var users = await loadUsersTask;
+            var orders = await loadOrdersTask;
 
             // Фильтрация по пользователю
             if (cmbUser2.SelectedIndex != 0)
             {
                 int userId = Convert.ToInt32(cmbUser2.SelectedValue);
-                shift = shift.Where(u => u.shift_user_id == userId).ToList();
+                shifts = shifts.Where(u => u.shift_user_id == userId).ToList();
             }
 
             // Связываем данные
-            foreach (var i in shift)
+            foreach (var shift in shifts)
             {
-                i.user = users.FirstOrDefault(u => u.user_id == i.shift_user_id);
-                bs.Add(i);
+                shift.user = users.FirstOrDefault(u => u.user_id == shift.shift_user_id);
+                shift.shiftOrders = orders.Where(or => or.order_shift == shift.shift_id).ToList();
             }
 
-            dgvShiftHistory.DataSource = bs;
+            dgvShiftHistory.DataSource = shifts;
         }
 
         private void cmbProdKitchen_SelectedIndexChanged(object sender, EventArgs e)
@@ -381,37 +385,60 @@ namespace ManagerApplication.UserControls
 
         private async void UpdateTopWorkers()
         {
-            List<UserMetrics> userMetrics = new List<UserMetrics>();
+            // 1. Загружаем данные ПАРАЛЛЕЛЬНО
+            var usersTask = new User().OnAllUserAsync();
+            var ordersTask = new Order().OnLoadAsync();
+            var shiftsTask = new Shift().OnLoadAsync();
 
-            var users = await new User().OnAllUserAsync();
+            // Ждем завершения всех задач одновременно
+            await Task.WhenAll(usersTask, ordersTask, shiftsTask);
 
-            foreach (var i in users)
+            var users = await usersTask;
+            var orders = await ordersTask;
+            var shifts = await shiftsTask;
+
+            // 2. Группируем заказы по сменам (shift_id → список заказов)
+            var ordersGroupedByShift = orders
+                .GroupBy(o => o.order_shift)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
+            // 3. Создаем словарь: user_id → список его смен
+            var shiftsByUser = shifts
+                .GroupBy(s => s.shift_user_id)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
+            // 4. Рассчитываем метрики для каждого пользователя
+            var result = new List<UserMetrics>();
+
+            foreach (var user in users)
             {
-                double summa = 0.0;
-                int check = 0;
-                var shifts = await new Shift().OnLoadAsync();
-                shifts = shifts.Where(u => u.shift_user_id == i.user_id).ToList();
+                double totalSum = 0;
+                int totalOrders = 0;
 
-                foreach (var shift in shifts)
+                // Если у пользователя есть смены
+                if (shiftsByUser.TryGetValue(user.user_id, out var userShifts))
                 {
-                    await shift.LoadOrdersAsync();
-                    summa += shift.OrdersSum;
-                    check += shift.OrdersCount;
+                    foreach (var shift in userShifts)
+                    {
+                        // Если в смене есть заказы
+                        if (ordersGroupedByShift.TryGetValue(shift.shift_id, out var shiftOrders))
+                        {
+                            totalSum += shiftOrders.Sum(o => o.order_price); // Замените на ваше поле суммы
+                            totalOrders += shiftOrders.Count;
+                        }
+                    }
                 }
-                UserMetrics userMetric = new UserMetrics()
-                {
-                    summa_total = summa,
-                    check_count = check,
-                    user_name = i.user_name
-                };
-                userMetrics.Add(userMetric);
-            }
-            //   if (cmbWorkersFilter.SelectedIndex == 1)
-            //       userMetrics.Sort((p1, p2) => p2.check_count.CompareTo(p1.check_count));
-            //   else if (cmbWorkersFilter.SelectedIndex == 2)
-            //      userMetrics.Sort((p1, p2) => p2.summa_total.CompareTo(p1.summa_total));
 
-            dgvTopWorkers.DataSource = userMetrics;
+                result.Add(new UserMetrics
+                {
+                    user_name = user.user_name,
+                    summa_total = totalSum,
+                    check_count = totalOrders
+                });
+            }
+
+            // 5. Обновляем интерфейс
+            dgvTopWorkers.DataSource = result;
         }
 
         private async void UpdateCassa()
@@ -424,13 +451,13 @@ namespace ManagerApplication.UserControls
             foreach (var transaction in cassaTransactions)
             {
                 transaction.user = users.FirstOrDefault(u => u.user_id == transaction.transaction_user);
-                if (transaction.transaction_withdrawal_type == EnumWithdrawalType.Наличными)
+                if (transaction.transaction_cassa != 0)
                 {
                     transaction.cassa = cassas?.FirstOrDefault(c => c.cassa_id == transaction.transaction_cassa);
                 }
-                else if (transaction.transaction_withdrawal_type == EnumWithdrawalType.Безналичными)
+                else if (transaction.transaction_card != 0)
                 {
-                    transaction.card = cards?.FirstOrDefault(c => c.card_id == transaction.transaction_cassa);
+                    transaction.card = cards?.FirstOrDefault(c => c.card_id == transaction.transaction_card);
                 }
             }
             dgvCassaHistory.DataSource = cassaTransactions;

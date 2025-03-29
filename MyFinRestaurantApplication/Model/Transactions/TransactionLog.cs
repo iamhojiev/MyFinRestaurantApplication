@@ -91,10 +91,9 @@ namespace ManagerApplication.Model
             if (transaction is CassaLog cassaTransaction)
             {
                 req.AddParameter("transaction_cassa", cassaTransaction.transaction_cassa)
-                   .AddParameter("transaction_cassa_balance", cassaTransaction.transaction_cassa_balance)
+                   .AddParameter("transaction_card", cassaTransaction.transaction_card)
                    .AddParameter("transaction_cassa_description", cassaTransaction.transaction_cassa_description)
-                   .AddParameter("transaction_cassa_operation", (int)cassaTransaction.transaction_cassa_operation)
-                   .AddParameter("transaction_withdrawal_type", (int)cassaTransaction.transaction_withdrawal_type);
+                   .AddParameter("transaction_cassa_operation", (int)cassaTransaction.transaction_cassa_operation);
             }
 
             if (transaction is EntryLog entryTransaction)
@@ -130,10 +129,9 @@ namespace ManagerApplication.Model
             if (transaction is CassaLog cassaTransaction)
             {
                 req.AddParameter("transaction_cassa", cassaTransaction.transaction_cassa)
-                   .AddParameter("transaction_cassa_balance", cassaTransaction.transaction_cassa_balance)
+                   .AddParameter("transaction_card", cassaTransaction.transaction_card)
                    .AddParameter("transaction_cassa_description", cassaTransaction.transaction_cassa_description)
-                   .AddParameter("transaction_cassa_operation", (int)cassaTransaction.transaction_cassa_operation)
-                   .AddParameter("transaction_withdrawal_type", (int)cassaTransaction.transaction_withdrawal_type);
+                   .AddParameter("transaction_cassa_operation", (int)cassaTransaction.transaction_cassa_operation);
             }
 
             if (transaction is EntryLog entryTransaction)

@@ -51,13 +51,7 @@ namespace ManagerApplication.Model
 
             var res = await client.PostAsync(req);
 
-            if (res.IsSuccessful)
-            {
-                var str = $"Баланс кассы '{updated?.cassa_name}' был изменен:\nБыло: {updated?.cassa_money}\nСтало:{updated.cassa_money}";
-                await Debug.DebugInsertAsync(str, Settings.Default.user_id);
-                return true;
-            }
-            return false;
+            return res.IsSuccessful;
         }
 
         public async Task<Cassa> OnSelectCassaAsync(int id)
